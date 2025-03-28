@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('wedding_organizers', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+            $table->string('slug');
+            $table->string('icon');
+            $table->string('phone');
+
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class City extends Model
         'icon',
     ];
 
-    public function setAttributeName($value)
+    public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);
