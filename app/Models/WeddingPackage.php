@@ -32,7 +32,7 @@ class WeddingPackage extends Model
 
     public function weddingOrganizer(): BelongsTo
     {
-        return $this->belongsTo(City::class, 'wedding_organizer_id');
+        return $this->belongsTo(WeddingOrganizer::class, 'wedding_organizer_id');
     }
     public function city(): BelongsTo
     {

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('wedding_bonus_packages', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('wedding_package_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('bonus_package_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }

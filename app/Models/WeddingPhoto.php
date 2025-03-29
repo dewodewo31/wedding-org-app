@@ -12,6 +12,6 @@ class WeddingPhoto extends Model
 
     protected $fillable = [
         'wedding_package_id',
-        'phote',
+        'photo',
     ];
 }

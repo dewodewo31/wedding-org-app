@@ -23,7 +23,27 @@ class WeddingTestimonialResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('occupation')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\FileUpload::make('photo')
+                    ->required()
+                    ->image(),
+
+                Forms\Components\Select::make('wedding_package_id')
+                    ->relationship('weddingPackages', 'name')
+                    ->preload()
+                    ->required(),
+
+                Forms\Components\Textarea::make('message')
+                    ->required(),
+
+
             ]);
     }
 
@@ -31,7 +51,19 @@ class WeddingTestimonialResource extends Resource
     {
         return $table
             ->columns([
-                //
+
+                Tables\Columns\ImageColumn::make('photo')
+                    ->circular(),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('occupation')
+                    ->label('Pekerjaan'),
+
+                Tables\Columns\TextColumn::make('weddingPackages.name')
+                    ->label('Paket Wedding')
+                    ->searchable(),
             ])
             ->filters([
                 //

@@ -23,7 +23,21 @@ class BonusPackageResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\FileUpload::make('thumbnail')
+                    ->image()
+                    ->required(),
+
+                Forms\Components\Textarea::make('about')
+                    ->required(),
+
+                Forms\Components\TextInput::make('price')
+                    ->required()
+                    ->numeric()
+                    ->prefix('IDR'),
             ]);
     }
 
@@ -31,7 +45,13 @@ class BonusPackageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+
+                Tables\Columns\ImageColumn::make('thumbnail'),
+
+                Tables\Columns\TextColumn::make('price'),
+
             ])
             ->filters([
                 //
