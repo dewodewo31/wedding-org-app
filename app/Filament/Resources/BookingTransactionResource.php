@@ -132,7 +132,8 @@ class BookingTransactionResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('booking_trx_id')
-                    ->searchable(),
+                    ->searchable()
+                    ->label('Invoice Code'),
 
                 Tables\Columns\IconColumn::make('is_paid')
                     ->boolean()
