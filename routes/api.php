@@ -16,11 +16,11 @@ Route::get('/city/{city:slug}', [CityController::class, 'show']);
 Route::apiResource('/cities', CityController::class);
 
 Route::get('/wedding-organizer/{weddingOrganizer:slug}', [WeddingOrganizerController::class, 'show']);
-Route::apiResource('/wedding-organizer', WeddingOrganizerController::class);
+Route::apiResource('/wedding-organizers', WeddingOrganizerController::class);
 
 Route::get('/wedding-packages/popular', [WeddingPackageController::class, 'popular']);
-Route::get('/wedding-packages/{weddingPackage:slug}', [WeddingPackageController::class, 'show']);
-Route::apiResource('/wedding-packages}', WeddingPackageController::class);
+Route::get('/wedding-package/{weddingPackage:slug}', [WeddingPackageController::class, 'show']);
+Route::apiResource('/wedding-packages', WeddingPackageController::class);
 
 Route::apiResource('/wedding-testimonials', WeddingTestimonialController::class);
 
