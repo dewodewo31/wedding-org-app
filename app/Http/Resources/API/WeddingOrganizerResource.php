@@ -21,7 +21,7 @@ class WeddingOrganizerResource extends JsonResource
             'phone' => $this->phone,
             'icon' => $this->icon,
             'weddingPackages_count' => $this->wedding_package_count,
-            'weddingPackages' => new WeddingPackageResource($this->whenLoaded('weddingPackages')),
+            'weddingPackages' => WeddingPackageResource::collection($this->whenLoaded('weddingPackages')),
         ];
     }
 }

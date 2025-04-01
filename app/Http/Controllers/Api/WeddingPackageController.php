@@ -21,7 +21,7 @@ class WeddingPackageController extends Controller
 
     public function show(WeddingPackage $weddingPackage)
     {
-        $weddingPackage->load(['city', 'photos', 'weddingBonusPackages.bonusPackage', 'weddingOrganizer', 'weddingTestimonials']);
+        $weddingPackage->load(['city', 'photos', 'weddingBonusPackages.bonusPackages', 'weddingOrganizer', 'weddingTestimonials']);
         $weddingPackage->weddingOrganizer->loadCount('weddingPackages');
         $weddingPackage->city->loadCount('weddingPackages');
 

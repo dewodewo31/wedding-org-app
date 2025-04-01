@@ -25,12 +25,12 @@ class BookingTransaction extends Model
         'wedding_package_id',
     ];
 
-    public function weddingPackages(): BelongsTo
+    public function weddingPackage(): BelongsTo
     {
         return $this->belongsTo(WeddingPackage::class, 'wedding_package_id');
     }
 
-    public function generateUniqueTrxId()
+    public static function generateUniqueTrxId()
     {
         $prefix = 'NWTX/INV/'; //New Wedding Transactions
         do {

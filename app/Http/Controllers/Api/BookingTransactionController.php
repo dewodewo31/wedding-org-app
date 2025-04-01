@@ -19,7 +19,7 @@ class BookingTransactionController extends Controller
 
         $weddingPackage = WeddingPackage::find($validatedData['wedding_package_id']);
 
-        if ($weddingPackage) {
+        if (!$weddingPackage) {
             return response()->json(['message' => 'Package Not Found'], 404);
         }
 

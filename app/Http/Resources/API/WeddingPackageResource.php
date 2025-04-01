@@ -24,7 +24,7 @@ class WeddingPackageResource extends JsonResource
             'about' => $this->about,
             'city' => new CityResource($this->whenLoaded('city')),
             'weddingOrganizer' => new WeddingOrganizerResource($this->whenLoaded('weddingOrganizer')),
-            'photo' => WeddingPhotoResource::collection($this->whenLoaded('photos')),
+            'photos' => WeddingPhotoResource::collection($this->whenLoaded('photos')),
             'weddingBonusPackages' => WeddingBonusPackageResource::collection($this->whenLoaded('weddingBonusPackages')),
             'weddingTestimonials' => WeddingTestimonialResource::collection($this->whenLoaded('weddingTestimonials')),
         ];

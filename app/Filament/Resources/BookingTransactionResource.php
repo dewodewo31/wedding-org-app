@@ -34,7 +34,7 @@ class BookingTransactionResource extends Resource
                             Grid::make(2)
                                 ->schema([
                                     Forms\Components\Select::make('wedding_package_id')
-                                        ->relationship('weddingPackages', 'name')
+                                        ->relationship('weddingPackage', 'name')
                                         ->searchable()
                                         ->preload()
                                         ->required()
@@ -126,7 +126,7 @@ class BookingTransactionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('weddingPackages.thumbnail'),
+                Tables\Columns\ImageColumn::make('weddingPackage.thumbnail'),
 
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
@@ -147,7 +147,7 @@ class BookingTransactionResource extends Resource
             ->filters([
                 SelectFilter::make('wedding_package_id')
                     ->label('Wedding Package')
-                    ->relationship('weddingPackages', 'name'),
+                    ->relationship('weddingPackage', 'name'),
 
             ])
             ->actions([
