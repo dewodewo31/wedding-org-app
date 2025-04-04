@@ -21,8 +21,8 @@ class WeddingBonusPackage extends Model
         return $this->belongsTo(WeddingPackage::class, 'wedding_package_id');
     }
 
-    public function bonusPackages(): BelongsTo
+    public function bonusPackage(): BelongsTo
     {
-        return $this->belongsTo(BonusPackage::class, 'bonus_packages_id');
+        return $this->belongsTo(BonusPackage::class, 'bonus_package_id');
     }
 }
